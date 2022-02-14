@@ -1,0 +1,86 @@
+extends layout
+
+block content
+    header.primary-header.flex
+      .logo
+        a(href='index.html')
+          | BUKO 
+          span(style='color: aqua;') FERNANDO
+      button.mobile-nav-toggle(aria-controls='primary--nav' aria-expanded='false')
+      nav
+        ul#primary--nav.primary--nav.flex(data-visible='false')
+          li
+            a.link(href='index' aria-hidden='true') Home
+          li
+            a.link(href='works' aria-hidden='true') Works
+          li.active
+            a.link(href='about' aria-hidden='true') About
+          li
+            a.link(href='contact' aria-hidden='true') Contact
+          li
+            a.link(href='login' aria-hidden='true') Login
+          li
+            a.link(href='signup' aria-hidden='true') Sign Up
+    .grid-about
+      .image-about
+        img#image(src='/images/avatar.png' height='350px' width='350px')
+      .socmed-about
+        a(href='http://facebook.com' target='_blank')
+          img#fb(src='images/fb.png')
+        a(href='http://facebook.com' target='_blank')
+          img#msngr(src='images/msngr.png')
+        a(href='http://behance.com' target='_blank')
+          img#behance(src='images/behance.png')
+        a(href='http://youtube.com' target='_blank')
+          img#ytube(src='images/ytube.png')
+        br
+        br
+      .txt-about
+        h1#txt NIKO "BUKO" FERNANDO
+        p#txt
+          | I am a 
+          span full time animation instuctor
+          | . 
+          br
+          | I am also a 
+          span 2D background artist
+          | .
+          br
+          | And I also do 
+          span character design
+          |  and 
+          span illustration comission
+          |  for my side hustles.
+        br
+      #image1
+        span &anim
+        | ation
+      #txt1
+        | Lorem ipsum dolor sit, amet consectetur adipisicing elit. In minima molestias quibusdam quasi, aperiam repellat ut hic provident. Quisquam perspiciatis molestiae impedit iure expedita culpa unde distinctio quo corporis facilis est vitae accusantium atque tenetur reprehenderit ducimus, dolore quam ipsum. Maxime deserunt voluptas reprehenderit magnam iure nulla blanditiis quos minus dolorem alias laboriosam magni nostrum, asperiores sint, ut fugiat cupiditate soluta tempore natus dicta eaque!
+      #txt2
+        | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam minima quisquam exercitationem, qui eum quas eos ut repudiandae ipsa expedita cumque id provident quam? Fuga corporis aperiam sunt, architecto velit fugiat iusto magni vel, laborum, molestias rem! Libero aliquid officiis beatae, assumenda vitae vel totam est labore deleniti voluptatum, fuga ullam veritatis modi aspernatur. Natus!
+      #image2
+        | chara
+        span cter desi
+        | gn&
+      #image3
+        span &illust
+        | ration
+      #txt3
+        | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos consectetur nihil neque accusamus ea, odit eos debitis nostrum quas minus similique laboriosam, aperiam incidunt, dolorum commodi. Tempora nihil quasi aut sapiente reprehenderit fugiat veritatis, laudantium exercitationem atque pariatur fugit incidunt necessitatibus, totam optio iure corrupti est minima deserunt itaque ut perferendis! Consequatur esse modi veritatis, nam quas exercitationem possimus. Ducimus unde quisquam quaerat harum dignissimos?
+    script.
+      function parallaxXX (element, distance, speed) {
+      let item = document.querySelector(element);
+      item.style.transform = `translateX(${distance * speed}px)`;
+      }
+      window.addEventListener("scroll", function(){
+      parallaxXX(".image-about", window.scrollY, 3);
+      parallaxXX(".txt-about", -window.scrollY, 3);
+      });
+      function parallaxYY (element, distance, speed) {
+      let item = document.querySelector(element);
+      item.style.transform = `translateY(${distance * speed}px)`;
+      }
+      window.addEventListener("scroll", function(){
+      parallaxYY(".socmed-about", -window.scrollY, 6);
+      });

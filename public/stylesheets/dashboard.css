@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Questrial&display=swap');
+
+:root {
+    --main-color: #ffffff;
+    --sub-color: rgb(255, 199, 16);
+    --font: 'Questrial', sans-serif;
+    --font-sub: 'Bebas Neue', cursive;
+    --font-3: 'Mouse Memoirs', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 5px;
+    color: var(--main-color);
+}
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+body {
+    background: black;
+    overflow-x: hidden;
+    font-family: var(--font);
+    font-size: large;
+    height: 0%;
+    overflow-y: scroll;
+    /* scroll-snap-type: y mandatory; */
+}
+
+h1, p {
+    color: var(--main-color);
+    letter-spacing: .1rem;
+    word-spacing: .2em;
+}
+
+span {
+    color: var(--sub-color);
+}
+
+
+
+a{
+    color: white;
+    text-decoration: none;
+    transition: all .2s ease-in-out 0s;    
+}
+
+.flex {
+    display: flex;
+}
+
+.logo {
+    margin: 1rem;
+    font-size: 2.5vmin;
+    word-spacing: .35rem;
+    letter-spacing: .1rem;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+
+
+                    /***************   SCROLLBAR   ***************/
+
+::-webkit-scrollbar {
+    max-width: 12px;
+    background-color: rgb(92, 78, 0);
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0); 
+    border-radius: 10px;
+  }
+   
+    ::-webkit-scrollbar-thumb {
+    background: rgba(255, 115, 0, 0.53);
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--sub-color); 
+  }
+
+
+
+
+
+                    /***************   NAVBAR   ***************/
+
+.primary-header {
+    font-family: 'Bebas Neue', cursive;
+    font-size: large;
+    align-items: center;
+    justify-content: space-between; /*gives header content space in between elements*/
+    padding-right: 10px;
+}
+
+.primary--nav {
+    list-style: none;
+    padding: .75rem;
+    margin: 0;
+    letter-spacing: .1rem;
+    background: rgba(255, 197, 5, 0.493);
+    backdrop-filter: blur(2rem);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 900;
+}
+
+.primary--nav a:hover {
+    color: gray;
+}
+
+.primary--nav li {
+    padding-right: 20px;
+}
+
+.primary--nav .link {
+    position: relative;
+    display: inline-block;
+}
+
+.primary--nav .link:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--sub-color);
+    /* visibility: hidden; */
+    transform: scaleX(0);
+    transition: all .3s ease-in-out 0s;    
+}
+
+.primary--nav .link:hover:before{
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.active .link:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--sub-color);
+    transition: all .3s ease-in 0s;  
+}
+
+
+
+
+/***************   DASHBOARD   ***************/
+
+
+
+.db-avatar-title {
+    display: flex;
+    font-size: 3vmin;    
+}
+
+.db-avatar-title span{
+    color: rgb(230, 155, 18);
+    text-transform: uppercase;
+}
+
+.dashboard-greetings {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+}
+
+.dashboard-greetings span {
+    color: rgb(255, 230, 0);
+    font-weight: bolder;
+}
+
+
+.db-classes-content, .db-announcements-content {
+    padding: 3em;
+    height: auto;
+}
+.db-upcoming-classes, .db-announcements {
+    width: 50%;
+    height: auto;
+    border-radius: 120px;
+}
+.db-upcoming-classes {
+    background-color: rgba(255, 115, 0, 0.53);
+}
+
+.db-announcements {
+    background-color: rgba(238, 57, 57, 0.493);
+}
+
+.db-gallery {
+    background: linear-gradient(25deg, #471d00, #000000) no-repeat;
+    width: auto;
+    border: 5px solid var(--sub-color);
+    height: 75vh;
+    overflow-y: scroll;
+    padding: 1em 3em 1em 3em;
+}
+
+.db-upload-img {
+    text-align: center;
+}
+
+form input {
+    color: var(--sub-color);
+}
+
+#db-btn-files {
+    border:1px solid rgb(255, 187, 0);
+    border-radius: 100px;
+}
+
+#db-btn {
+    color: white;
+    font-family: var(--font);
+    display:inline-block;
+    font-size: 3vmin;
+    
+    /* font:normal normal 300 1.3em 'Open Sans'; */
+    text-decoration:none; 
+    
+    background-color:transparent;
+    border:1px solid rgb(255, 187, 0);
+    border-radius:100px;
+    
+    padding: .3em 1.2em;
+    margin:5px;
+        
+    background-size: 200% 100%; 
+    background-image: linear-gradient(to right, transparent 50%, rgb(255, 174, 0) 50%);
+    transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  }
+  
+#db-btn:hover{
+    color:rgb(0, 0, 0);
+    background-color:rgb(211, 156, 5);
+    background-position: -100% 100%;
+  }
+  
+  

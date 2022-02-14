@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    header.primary-header.flex
+      .logo
+        a(href='index.html')
+          | BUKO 
+          span(style='color: aqua;') FERNANDO
+      button.mobile-nav-toggle(aria-controls='primary--nav' aria-expanded='false')
+      nav
+        ul#primary--nav.primary--nav.flex(data-visible='false')
+          li
+            a.link(href='index' aria-hidden='true') Home
+          li
+            a.link(href='works' aria-hidden='true') Works
+          li
+            a.link(href='about' aria-hidden='true') About
+          li.active
+            a.link(href='contact' aria-hidden='true') Contact
+          li
+            a.link(href='login' aria-hidden='true') Login
+          li
+            a.link(href='signup' aria-hidden='true') Sign Up
+    .contact-title
+      | I'm always looking for more ideas!
+      br
+      | What do you have in mind?
+    .container-contact
+      h1 Contact Form
+      form(action='contact' method='post')
+        p.name
+          | Who are you?
+          input#name.feedback-input(name='name' type='text' placeholder='your name' required='')
+        p.email
+          | How to reach you?
+          input#email.feedback-input(name='email' type='email' placeholder='your email' required='')
+        p.text
+          | How can I help you?
+          textarea#comment.feedback-input(name='text' placeholder='your message' required='')
+        .submit
+          input#button-blue(type='submit' value='Will keep in touch!')

@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    header.primary-header.flex
+      .logo
+        a(href='index.html')
+          | BUKO 
+          span(style='color: aqua;') FERNANDO
+      button.mobile-nav-toggle(aria-controls='primary--nav' aria-expanded='false')
+      nav
+        ul#primary--nav.primary--nav.flex(data-visible='false')
+          li
+            a.link(href='index' aria-hidden='true') Home
+          li
+            a.link(href='works' aria-hidden='true') Works
+          li
+            a.link(href='about' aria-hidden='true') About
+          li
+            a.link(href='contact' aria-hidden='true') Contact
+          li.active
+            a.link(href='login' aria-hidden='true') Login
+          li
+            a.link(href='signup' aria-hidden='true') Sign Up
+    .login-wrapper
+      .grid-register
+        .grid-login
+          form(action='login' method='post')
+            | Username: 
+            input(type='text' name='username' placeholder='username')
+            br
+            br
+            |                     Password: 
+            input(type='password' name='password' placeholder='password')
+            br
+            br
+            .login-btn
+              input(type='submit' name='submit' method='post' value='Login' id="btn-member")
+              br
+              br
+              //- a(href='') Forgot password
+              p(style='font-size: 14px; color: red') #{error}
+      .div-login-bg
+        h1#login-bg
+          span Log
+          |  In
+

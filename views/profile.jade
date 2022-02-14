@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title BUKO
+    link(rel='stylesheet' href='/stylesheets/dashboard.css')
+  body
+    header.primary-header.flex
+      .logo
+        a(href='profile')
+          | BUKO 
+          span FERNANDO
+      nav
+        ul#primary--nav.primary--nav.flex(data-visible='false')
+          li.active
+            a.link(href='profile' aria-hidden='true') Dashboard
+          li
+            a.link(href='logout' aria-hidden='true') Sign Out
+    h1.db-avatar-title
+      | Hello, 
+      span #{username}
+      | !
+    .db-dashboard-wrapper
+      .dashboard-greetings
+        //
+          <div class="db-avatar-pic">
+          PIC here
+          </div>
+        .db-upcoming-classes
+          .db-classes-content
+            h3 CLASSES
+            ul
+              li
+                span Feb 14
+                |  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, voluptatum.
+              li
+                span Feb 16
+                |  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, voluptatum.
+        .db-announcements
+          .db-announcements-content
+            h3 ANNOUNCEMENTS
+            p Keep posted for upcoming events/announcements
+    .db-gallery
+      .db-upload-img
+        form(method='upload')
+          input#db-btn-files(type='file' name='file')
+          input#db-btn(type='submit' name='submit')
+      |         student's uploaded images
+    script(src='/javascripts/nav.js')

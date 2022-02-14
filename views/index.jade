@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  header.primary-header.flex
+      .logo
+        a(href='index.html')
+          | BUKO 
+          span(style='color: aqua;') FERNANDO
+      button.mobile-nav-toggle(aria-controls='primary--nav' aria-expanded='false')
+      nav
+        ul#primary--nav.primary--nav.flex(data-visible='false')
+          li.active
+            a.link(href='index' aria-hidden='true') Home
+          li
+            a.link(href='works' aria-hidden='true') Works
+          li
+            a.link(href='about' aria-hidden='true') About
+          li
+            a.link(href='contact' aria-hidden='true') Contact
+          li
+            a.link(href='login' aria-hidden='true') Login
+          li
+            a.link(href='signup' aria-hidden='true') Sign Up
+    .header-img
+      .parent
+        img#head1(src='/images/n1.jpg')
+        img#head2(src='/images/n2.jpg')
+        img#head3(src='/images/n3.jpg')
+        img#head4(src='/images/n4.jpg')
+    .services
+      .intro-intro
+        section
+          | Hello! It's nice to meet you.
+          br
+          |  My name's 
+          span Niko
+          | .
+      .intro
+        img#intro(src='/images/niko.jpg')
